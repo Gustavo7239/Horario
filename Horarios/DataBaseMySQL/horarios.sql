@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2023 a las 02:12:35
+-- Tiempo de generación: 22-11-2023 a las 02:42:24
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -62,7 +62,8 @@ INSERT INTO `horario` (`id_horario`, `nombre`, `curso`, `descripcion`) VALUES
 (1, 'miHorario', 'DAM', 'Esta es mi descripcion del horario de clase de DAM 23 - 24'),
 (2, 'mihorario', 'daw', NULL),
 (3, 'mihorario', 'daw', NULL),
-(4, 'mihorario2', 'daw', NULL);
+(4, 'mihorario2', 'daw', NULL),
+(5, 'mihorario2', '', NULL);
 
 --
 -- Índices para tablas volcadas
