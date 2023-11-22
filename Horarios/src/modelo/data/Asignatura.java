@@ -44,7 +44,7 @@ public class Asignatura {
 	
 	@Override
 	public String toString() {
-		return "Asignatura [id_asignatura=" + id_asignatura + ", id_horario=" + id_horario + ", nombre=" + nombre
+		return "Asignatura [id_asignatura=" + id_asignatura + ", horario=" + horario + ", nombre=" + nombre
 				+ ", enlace=" + enlace + "]";
 	}
 }
