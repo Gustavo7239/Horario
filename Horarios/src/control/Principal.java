@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import modelo.dao.AsignaturaDAO;
 import modelo.dao.HorarioDAO;
+import modelo.data.Asignatura;
 import modelo.data.Horario;
 import vista.Menu;
 
@@ -65,12 +66,33 @@ public class Principal {
 	}
 
 	private static void ModificarUnaAsignatura() {
+		
 	}
 
 	private static void ModificarUnHorario() {
 	}
 
 	private static void CrearUnaAsignatura() {
+		Scanner teclado = new Scanner(System.in);
+		
+		System.out.print("Introduzca el nombre del horario al que pertenece esta asignatura: \n> ");
+		String nombreHorario = teclado.nextLine();
+		
+		int idHorario;
+		if((idHorario = HorarioDAO.isHorarioInBD(nombreHorario))==0) {
+			System.out.println("[ERROR]: Nombre de horario no existe.");
+		}else {
+			Horario horarioConsulta = HorarioDAO.encontrarHorarioPorId(idHorario);
+			
+			System.out.print("Introduzca el nombre de la nueva asignatura: \n> ");
+			String nombreAsignatura = teclado.nextLine();
+			
+			System.out.println("Ahora introduzca un enlace : \n> ");
+			String enlace = teclado.nextLine();
+			
+			Asignatura a =new Asignatura(0,horarioConsulta,nombreAsignatura,enlace);
+			AsignaturaDAO.insertaUnaAsignatura(a);
+		}
 	}
 
 	private static void CrearUnHorario() {

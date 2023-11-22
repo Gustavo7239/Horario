@@ -93,4 +93,23 @@ public class HorarioDAO {
 		}
 		return idHorario;
 	}
+	
+	public static Horario encontrarHorarioPorId(int id) {
+		Conexion con = new Conexion();
+		connection = con.getJdbcConnection();
+		ResultSet rs;
+		Horario resultado = new Horario();
+		
+		try {
+			Statement statement = connection.createStatement();
+			String sql = "SELECT id_horario, nombre, curso, descripcion FROM horario WHERE id_horario = "+id;
+			rs = statement.executeQuery(sql);
+			resultado = new Horario(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4));
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultado;
+	}
 }
