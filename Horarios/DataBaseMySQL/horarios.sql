@@ -62,22 +62,7 @@ INSERT INTO `horario` (`id_horario`, `nombre`, `curso`, `descripcion`) VALUES
 (1, 'miHorario', 'DAM', 'Esta es mi descripcion del horario de clase de DAM 23 - 24'),
 (2, 'mihorario', 'daw', NULL),
 (3, 'mihorario', 'daw', NULL),
-(4, 'mihorario2', 'daw', NULL),
-(5, 'mihorario2', '', NULL),
-(6, 'mihorario4', '', NULL),
-(7, '', '', NULL),
-(8, '', '', NULL),
-(9, 'Hola', 'asd', 'dsadsa'),
-(10, '', '', 'hola'),
-(12, 'miMiniHorario100', 'DAM', 'null'),
-(13, 'miMiniHorario100', 'DAM', 'null'),
-(14, 'miMiniHorario100', 'DAM', 'null'),
-(15, 'miMiniHorario100', 'DAM', 'null'),
-(16, 'miMiniHorario100', 'DAM', 'null'),
-(17, 'miMiniHorario100', 'DAM', 'null'),
-(18, 'miMiniHorario100', 'DAM', 'null'),
-(19, 'miMiniHorario100', 'DAM', 'null'),
-(20, 'miMiniHorario100', 'DAM', 'null');
+(4, 'mihorario2', 'daw', NULL);
 
 --
 -- Índices para tablas volcadas
