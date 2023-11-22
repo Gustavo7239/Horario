@@ -60,9 +60,33 @@ public class Principal {
 	}
 
 	private static void BorrarUnaAsignatura() {
+		Scanner teclado = new Scanner(System.in);
+		
+		System.out.print("Introduzca el nombre de la asignatura a borrar: \n> ");
+		String nombreAsignatura= teclado.nextLine();
+		
+		int idAsignatura;
+		if((idAsignatura = AsignaturaDAO.isAsignaturaInBD(nombreAsignatura))==0) {
+			System.out.println("[ERROR]: Nombre de la Asignatura no existe.");
+		}else {
+			AsignaturaDAO.BorrarAsignatura(idAsignatura);
+			System.out.println("Se borro la asignatura exitosamente.");
+		}
 	}
 
 	private static void BorrarUnHorario() {
+		Scanner teclado = new Scanner(System.in);
+		
+		System.out.print("Introduzca el nombre del horario a borrar: \n> ");
+		String nombreHorario = teclado.nextLine();
+		
+		int idHorario;
+		if((idHorario = HorarioDAO.isHorarioInBD(nombreHorario))==0) {
+			System.out.println("[ERROR]: Nombre de horario no existe.");
+		}else {
+			HorarioDAO.borrarHorario(idHorario);
+		}
+		
 	}
 
 	private static void ModificarUnaAsignatura() {
@@ -70,6 +94,7 @@ public class Principal {
 	}
 
 	private static void ModificarUnHorario() {
+		
 	}
 
 	private static void CrearUnaAsignatura() {
@@ -92,6 +117,7 @@ public class Principal {
 			
 			Asignatura a =new Asignatura(0,horarioConsulta,nombreAsignatura,enlace);
 			System.out.println("introduciendo...");
+			
 			AsignaturaDAO.insertaUnaAsignatura(a);
 			
 		}

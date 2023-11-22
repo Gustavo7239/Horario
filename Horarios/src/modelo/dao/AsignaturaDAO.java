@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import modelo.data.Asignatura;
 import modelo.data.Horario;
@@ -80,5 +81,41 @@ public class AsignaturaDAO {
 		}
 		
 		return listaAsignaturas;
+	}
+	
+	public static boolean BorrarAsignatura(int id) {
+		Conexion con = new Conexion();
+		connection = con.getJdbcConnection();
+		boolean rowDeleted=false;
+		try {
+			Statement statement = connection.createStatement();
+			
+			String sql = "DELETE FROM asignatura WHERE id_asignatura="+id;
+			rowDeleted = statement.executeUpdate(sql) > 0;
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowDeleted;
+	}
+	
+	public static int isAsignaturaInBD(String nombre) {
+		List<Asignatura> listaAsignatura = new ArrayList<Asignatura>();
+		ResultSet rs;
+		int idAsignatura = 0;
+		Conexion con = new Conexion();
+		connection = con.getJdbcConnection();	
+		try {
+			Statement statement = connection.createStatement();
+		    String sql= "select id_asignatura from asignatura where nombre ='"+nombre+"'";
+			rs=statement.executeQuery(sql);
+			if(rs.next()) {
+				idAsignatura=rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
+		return idAsignatura;
 	}
 }

@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import modelo.data.Asignatura;
 import modelo.data.Horario;
 
 public class HorarioDAO {
@@ -39,13 +40,25 @@ public class HorarioDAO {
 		}
 	}
 	
+	public static void borrarHorarioYAsignaturas(int id) {
+		String nameHorario = encontrarHorarioPorId(id).getNombre();
+		List<Asignatura> asignaturasDelHorario = AsignaturaDAO.verAsignaturasDeUnHorario(nameHorario);
+		
+		for(Asignatura a : asignaturasDelHorario) {
+			AsignaturaDAO.BorrarAsignatura(a.getId_asignatura());
+		}
+		borrarHorario(id);
+		System.out.println("El horario "+nameHorario+" ha sido eliminado junto a todas sus asignaturas con exito.");
+	}
+	
 	public static boolean borrarHorario(int id) {
 		Conexion con = new Conexion();
 		connection = con.getJdbcConnection();
 		boolean rowDeleted=false;
 		try {
-			
 			Statement statement = connection.createStatement();
+			
+			
 			String sql = "DELETE FROM horario WHERE id_horario = "+id;
 			rowDeleted = statement.executeUpdate(sql) > 0;
 			
