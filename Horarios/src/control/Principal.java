@@ -87,11 +87,13 @@ public class Principal {
 			System.out.print("Introduzca el nombre de la nueva asignatura: \n> ");
 			String nombreAsignatura = teclado.nextLine();
 			
-			System.out.println("Ahora introduzca un enlace : \n> ");
+			System.out.print("Ahora introduzca un enlace: \n> ");
 			String enlace = teclado.nextLine();
 			
 			Asignatura a =new Asignatura(0,horarioConsulta,nombreAsignatura,enlace);
+			System.out.println("introduciendo...");
 			AsignaturaDAO.insertaUnaAsignatura(a);
+			
 		}
 	}
 

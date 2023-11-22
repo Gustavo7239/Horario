@@ -14,6 +14,7 @@ public class AsignaturaDAO {
 	
 	public static boolean insertaUnaAsignatura(Asignatura asignatura) {
 		Conexion con = new Conexion();
+		connection = con.getJdbcConnection();
 		boolean rowInserted = false;
 		
 		try {
@@ -22,7 +23,10 @@ public class AsignaturaDAO {
 			if((idHorario = HorarioDAO.isHorarioInBD(asignatura.getHorario().getNombre()))==0) {
 				System.out.println("[ERROR]: No existe el horario indicado");
 			}else {
-				String sql = "INSERT INTO asignatura VALUES ('0', '"+asignatura.getHorario()+"', '"+asignatura.getNombre()+"', '"+asignatura.getEnlace()+"');";
+				//String sql1 = "INSERT INTO asignatura VALUES ('0', '"+asignatura.getHorario()+"', '"+asignatura.getNombre()+"', '"+asignatura.getEnlace()+"');";
+				
+				String sql = "INSERT INTO asignatura(id_asignatura, id_horario, nombre, enlace) VALUES ('0','"+asignatura.getHorario().getId_horario()+"','"+asignatura.getNombre()+"','"+asignatura.getEnlace()+"')";
+				
 				rowInserted = statement.executeUpdate(sql) > 0;
 			}
 			

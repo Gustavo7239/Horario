@@ -102,9 +102,13 @@ public class HorarioDAO {
 		
 		try {
 			Statement statement = connection.createStatement();
-			String sql = "SELECT id_horario, nombre, curso, descripcion FROM horario WHERE id_horario = "+id;
+			String sql = "SELECT * FROM horario WHERE id_horario = "+id;
 			rs = statement.executeQuery(sql);
-			resultado = new Horario(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4));
+			
+			if(rs.next()) {
+				
+				resultado = new Horario(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4));
+			}
 			
 		}catch (Exception e) {
 			e.printStackTrace();
