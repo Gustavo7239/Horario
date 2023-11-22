@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2023 a las 02:42:24
+-- Tiempo de generación: 22-11-2023 a las 23:59:17
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -39,7 +39,8 @@ CREATE TABLE `asignatura` (
 --
 
 INSERT INTO `asignatura` (`id_asignatura`, `id_horario`, `nombre`, `enlace`) VALUES
-(1, 5, 'miAsignatura', 'asdasdd.com');
+(1, 5, 'miAsignatura', 'asdasdd.com'),
+(4, 1, 'FOL', 'miFolEnlace.com');
 
 -- --------------------------------------------------------
 
@@ -60,10 +61,8 @@ CREATE TABLE `horario` (
 
 INSERT INTO `horario` (`id_horario`, `nombre`, `curso`, `descripcion`) VALUES
 (1, 'miHorario', 'DAM', 'Esta es mi descripcion del horario de clase de DAM 23 - 24'),
-(2, 'mihorario', 'daw', NULL),
-(3, 'mihorario', 'daw', NULL),
-(4, 'mihorario2', 'daw', NULL),
-(5, 'mihorario2', '', NULL);
+(5, 'mihorario2', '', NULL),
+(21, 'miSegundoHorario', 'DAM', 'Este es mi segundo horario');
 
 --
 -- Índices para tablas volcadas
@@ -90,13 +89,13 @@ ALTER TABLE `horario`
 -- AUTO_INCREMENT de la tabla `asignatura`
 --
 ALTER TABLE `asignatura`
-  MODIFY `id_asignatura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_asignatura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `horario`
 --
 ALTER TABLE `horario`
-  MODIFY `id_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Restricciones para tablas volcadas
