@@ -19,21 +19,26 @@ public class Menu {
 			System.out.println("1. Ver todos los horarios");
 			System.out.println("2. Ver todas las asignaturas");
 			System.out.println("3. Ver las asignaturas de un horario");
+			System.out.println("4. Ver todos los recursos de una asignatura"); //Nuevo
 			//Insert
-			System.out.println("4. Crear un horario");
-			System.out.println("5. Crear una asignatura de un horario");
+			System.out.println("5. Crear un horario");
+			System.out.println("6. Crear una asignatura de un horario");
+			System.out.println("7. Crear un recurso");						  //Nuevo
+			System.out.println("8. Agregar un recurso a una asignatura");      //Nuevo
 			//Update
-			System.out.println("6. Modificar un horario");
-			System.out.println("7. Modificar una asignatura");
+			System.out.println("9. Modificar un horario");
+			System.out.println("10. Modificar una asignatura");
+			System.out.println("11. Modificar un recurso");   				  //Nuevo
 			//Delete
-			System.out.println("8. Borrar un horario");
-			System.out.println("9. Borrar una asignatura");
+			System.out.println("12. Borrar un horario");
+			System.out.println("13. Borrar una asignatura");
+			System.out.println("14. Borrar un recurso");      				  //Nuevo
 			System.out.println("______________________________________");
 			System.out.print("> ");
 			
 			try {
 				int respuesta = teclado.nextInt();
-				if(respuesta<1 || respuesta>9) {
+				if(respuesta<1 || respuesta>14) {
 					System.out.println("[ERROR]: El valor introducido esta fuera de los limites.");
 					continuar();
 					}
