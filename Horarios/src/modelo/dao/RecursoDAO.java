@@ -128,7 +128,7 @@ public class RecursoDAO {
 			Statement statement = connection.createStatement();
 			String sql = "DELETE FROM `asignatura_recurso` WHERE `id_recurso` LIKE "+idRecurso;
 			rs = statement.executeQuery(sql);
-			boolean rowInserted = statement.executeUpdate(sql) > 1;
+			boolean rowInserted = statement.executeUpdate(sql) > 0;
 			
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -146,7 +146,7 @@ public class RecursoDAO {
 			Statement statement = connection.createStatement();
 			String sql = "DELETE FROM `recurso` WHERE `recurso`.`id_recurso` = "+idRecurso;
 			rs = statement.executeQuery(sql);
-			boolean rowInserted = statement.executeUpdate(sql) > 1;
+			boolean rowInserted = statement.executeUpdate(sql) > 0;
 			
 		}catch (Exception e) {
 			e.printStackTrace();
